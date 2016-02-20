@@ -1,6 +1,17 @@
-// PHYO THANT KO, 5363901
-// javac <filename>.java
-// Using jdk 7
+/*
+   PHYO THANT KO, 5363901
+  
+   Using jdk 7
+ 
+   Compile Instructions
+   javac Chord.java
+   javac Node.java
+   javac NodeImp.java
+   
+   Run Instruction
+   java Chord <datafilename>.dat
+    
+ */
 
 import java.util.ArrayList;
 import java.util.HashMap;

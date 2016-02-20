@@ -1,8 +1,17 @@
-
-// PHYO THANT KO, 5363901
-// javac <filename>.java
-// Using jdk 7
-
+/*
+   PHYO THANT KO, 5363901
+  
+   Using jdk 7
+ 
+   Compile Instructions
+   javac Chord.java
+   javac Node.java
+   javac NodeImp.java
+   
+   Run Instruction
+   java Chord <datafilename>.dat
+    
+ */
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -49,16 +58,10 @@ public class NodeImp {
 			fingerTable.put(i, 0);
 		}
 		indexNode.setFingerTable(fingerTable);
-		//Node indexNode1 = new Node(7);
-		//Node indexNode2 = new Node(3);
 		nodeList.put(0, indexNode);
 		System.out.println("PHYO THANT KO");
 		System.out.println("5363901");
-		//nodeList.put(7, indexNode1);
-		//nodeList.put(3, indexNode2);
-		
-		//closestSucessor(0);
-		
+	
 	}
 	
 	public static void addpeer(int ID)
@@ -75,7 +78,6 @@ public class NodeImp {
 			fingerTable = buildFingerTable(ID);
 			indexNode.setFingerTable(fingerTable);
 			nodeList.put(ID, indexNode);
-			//System.out.println(routPath);
 			System.out.println("PEER " + ID + " ADDED");
 			
 			Node precessor = getPrecessor(indexNode);
@@ -380,7 +382,6 @@ public class NodeImp {
 				if(key <= removeID && key > precessorID)
 				{
 					node.getFingerTable().put(i, successorID);
-					//System.out.println("Changed " + node.getId() + " node at " + i + " place: " + successorID);
 				}		
 			}	
 		}
@@ -407,7 +408,6 @@ public class NodeImp {
 				if(key > precessorID || key <= successorID)
 				{
 					node.getFingerTable().put(i, successorID);
-					//System.out.println("Changed " + node.getId() + " node at " + i + " place: " + successorID);
 				}		
 			}	
 		}
@@ -434,7 +434,6 @@ public class NodeImp {
 				if(key > precessorID)
 				{
 					node.getFingerTable().put(i, successorID);
-					//System.out.println("Changed " + node.getId() + " node at " + i + " place: " + successorID);
 				}	
 			}	
 		}
@@ -461,7 +460,6 @@ public class NodeImp {
 				if(key <= newNodeID && key > beforeNewNodeID)
 				{
 					node.getFingerTable().put(i, newNodeID);
-					//System.out.println("Changed " + node.getId() + " node at " + i + " place: " + newNodeID);
 				}			
 			}	
 		}
@@ -600,7 +598,6 @@ public class NodeImp {
 	{	
 		 try {
 			 	int argumentNum = 0;
-			 	//String workingDir = System.getProperty("user.dir");
 			 	File file = new File(filename);
 			 
 			 	FileInputStream fis = new FileInputStream(file);
@@ -684,7 +681,6 @@ public class NodeImp {
 								for (int i =2; i<splitStr.length; i++)
 								{
 									argument += " " + splitStr[i];
-									//argument = argument.concat(" " + splitStr[i]);
 								}
 								System.out.println(argument);
 								insert(argument);
@@ -702,7 +698,6 @@ public class NodeImp {
 								for (int i =2; i<splitStr.length; i++)
 								{
 									argument += " " + splitStr[i];
-									//argument = argument.concat(" " + splitStr[i]);
 								}
 								delete(argument);
 							}
@@ -718,7 +713,6 @@ public class NodeImp {
 								for (int i =2; i<splitStr.length; i++)
 								{
 									argument += " " + splitStr[i];
-									//argument = argument.concat(" " + text);
 								}
 								Hash(argument);
 							}
@@ -817,7 +811,6 @@ public class NodeImp {
 			{
 				return nodeList.get(nodeList.lastKey());
 			}
-			//Collections.sort(nodeList);
 			for(int key : nodeList.keySet())
 			{
 				if(key < currentNode.getId())
